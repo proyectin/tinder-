@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Estudiantil - Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Íconos para darle más estilo -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Fondo Cyberpunk / Futurista -->
+    <div class="cyber-bg">
+        <div class="grid-overlay"></div>
+        <div class="glowing-orb orb-1"></div>
+        <div class="glowing-orb orb-2"></div>
+        <div class="glowing-orb orb-3"></div>
+    </div>
+    
+    <div class="cyber-card entrance-anim">
+        <h1>Match Estudiantil <i class="fas fa-bolt"></i></h1>
+
+        <form id="form-registro">
+            <div class="cyber-input" style="--delay: 0.2s">
+                <input type="text" id="nombre" required placeholder=" ">
+                <label><i class="fas fa-user-astronaut"></i> Nombre o Apodo</label>
+                <div class="border-anim"></div>
+            </div>
+
+            <div class="cyber-input date-input" style="--delay: 0.4s">
+                <input type="date" id="fecha_nac" required placeholder=" " title="Fecha de nacimiento">
+                <label class="active"><i class="fas fa-calendar-day"></i> Tu edad / Fecha nac.</label>
+                <div class="border-anim"></div>
+            </div>
+
+            <div class="cyber-input" style="--delay: 0.6s">
+                <input type="text" id="num_control" required placeholder=" ">
+                <label><i class="fas fa-id-badge"></i> Número de Control</label>
+                <div class="border-anim"></div>
+            </div>
+
+            <div class="cyber-input" style="--delay: 0.8s">
+                <input type="password" id="password" required placeholder=" ">
+                <label><i class="fas fa-fingerprint"></i> Contraseña</label>
+                <div class="border-anim"></div>
+            </div>
+
+            <button type="submit" class="cyber-btn entrance-anim" style="--delay: 1s">
+                <span class="btn-text">Hacer Match <i class="fas fa-heart"></i></span>
+            </button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

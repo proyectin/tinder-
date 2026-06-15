@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches en Tiempo Real - Sunset Match</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .matches-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .match-card {
+            width: 320px;
+            max-width: 100%;
+            background: rgba(20, 20, 30, 0.8);
+            border: 1px solid rgba(255, 62, 108, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: slideUp 0.5s ease backwards;
+        }
+        .match-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 62, 108, 0.4);
+            border-color: var(--neon-pink);
+        }
+        .match-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+        .match-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        .match-age {
+            color: var(--neon-orange);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .match-compatibilidad {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--neon-peach);
+            font-weight: 800;
+            color: var(--neon-peach);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            box-shadow: 0 0 10px rgba(255, 154, 141, 0.2);
+        }
+        .match-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #eee;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .loader {
+            font-size: 3rem;
+            color: var(--neon-pink);
+            animation: pulse 1s infinite alternate;
+            margin-top: 5rem;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 0.8; }
+            to { transform: scale(1.1); opacity: 1; text-shadow: 0 0 20px var(--neon-pink); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header-title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--neon-pink), var(--neon-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 62, 108, 0.5);
+        }
+        .btn-mensaje {
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-bg">
+        <div class="grid-overlay"></div>
+        <div class="glowing-orb orb-1"></div>
+        <div class="glowing-orb orb-2"></div>
+        <div class="glowing-orb orb-3"></div>
+    </div>
+
+    <div class="dashboard-container">
+        <h1 class="header-title">Tus Posibles Matches en Tiempo Real ✨</h1>
+        <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 3rem;">El algoritmo analizó las vibras de todos los conectados.</p>
+
+        <div id="loader" class="loader">
+            <i class="fas fa-radar"></i>
+            <p style="font-size: 1.5rem; margin-top: 1rem; font-weight: 300; color: white; text-shadow: none;">Buscando personas compatibles...</p>
+        </div>
+
+        <div id="contenedor-matches" class="matches-grid" style="display: none;">
+            <!-- Tarjetas se insertan aquí vía JS -->
+        </div>
+    </div>
+
+    <script src="matches.js"></script>
+</body>
+</html>

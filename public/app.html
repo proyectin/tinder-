@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Estudiantil - Cuestionario</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Fondo Animado (mismo que index) -->
+    <div class="cyber-bg">
+        <div class="grid-overlay"></div>
+        <div class="glowing-orb orb-1"></div>
+        <div class="glowing-orb orb-2"></div>
+        <div class="glowing-orb orb-3"></div>
+    </div>
+
+    <div class="cyber-card cuestionario-card entrance-anim">
+        <!-- Barra de progreso animada -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-text" id="progress-text">Pregunta 1 de 5</p>
+
+        <h1>Cuéntanos de ti <i class="fas fa-fire"></i></h1>
+
+        <form id="form-cuestionario">
+            <!-- Pregunta 1: Género -->
+            <div class="pregunta activa" id="pregunta-1">
+                <p class="pregunta-titulo"><i class="fas fa-venus-mars"></i> ¿Cómo te identificas?</p>
+                <div class="opciones-grid">
+                    <label class="opcion-card">
+                        <input type="radio" name="genero" value="Hombre" required>
+                        <div class="opcion-visual">
+                            <i class="fas fa-mars"></i>
+                            <span>Hombre</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="genero" value="Mujer">
+                        <div class="opcion-visual">
+                            <i class="fas fa-venus"></i>
+                            <span>Mujer</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="genero" value="No binario">
+                        <div class="opcion-visual">
+                            <i class="fas fa-genderless"></i>
+                            <span>No binario</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="genero" value="Género fluido">
+                        <div class="opcion-visual">
+                            <i class="fas fa-water"></i>
+                            <span>Género fluido</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="genero" value="Otro">
+                        <div class="opcion-visual">
+                            <i class="fas fa-star"></i>
+                            <span>Otro</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="genero" value="Prefiero no decir">
+                        <div class="opcion-visual">
+                            <i class="fas fa-user-secret"></i>
+                            <span>Prefiero no decir</span>
+                        </div>
+                    </label>
+                </div>
+                <button type="button" class="cyber-btn nav-btn" onclick="siguientePregunta(2)">
+                    <span class="btn-text">Siguiente <i class="fas fa-arrow-right"></i></span>
+                </button>
+            </div>
+
+            <!-- Pregunta 2: ¿Qué buscas? -->
+            <div class="pregunta" id="pregunta-2">
+                <p class="pregunta-titulo"><i class="fas fa-heart"></i> ¿Qué buscas aquí?</p>
+                <div class="opciones-grid">
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Algo serio" required>
+                        <div class="opcion-visual">
+                            <i class="fas fa-ring"></i>
+                            <span>Algo serio</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Amistad">
+                        <div class="opcion-visual">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Amistad</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Algo casual">
+                        <div class="opcion-visual">
+                            <i class="fas fa-coffee"></i>
+                            <span>Algo casual</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Compañero de estudio">
+                        <div class="opcion-visual">
+                            <i class="fas fa-book-reader"></i>
+                            <span>Compañero de estudio</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Conocer gente nueva">
+                        <div class="opcion-visual">
+                            <i class="fas fa-globe"></i>
+                            <span>Conocer gente</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="No lo sé aún">
+                        <div class="opcion-visual">
+                            <i class="fas fa-question"></i>
+                            <span>No lo sé aún</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Relación abierta">
+                        <div class="opcion-visual">
+                            <i class="fas fa-door-open"></i>
+                            <span>Relación abierta</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Networking / Profesional">
+                        <div class="opcion-visual">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Networking</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Solo platicar">
+                        <div class="opcion-visual">
+                            <i class="fas fa-comments"></i>
+                            <span>Solo platicar</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="busca" value="Pasar el rato">
+                        <div class="opcion-visual">
+                            <i class="fas fa-clock"></i>
+                            <span>Pasar el rato</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-botones">
+                    <button type="button" class="cyber-btn nav-btn btn-back" onclick="anteriorPregunta(1)">
+                        <span class="btn-text"><i class="fas fa-arrow-left"></i> Atrás</span>
+                    </button>
+                    <button type="button" class="cyber-btn nav-btn" onclick="siguientePregunta(3)">
+                        <span class="btn-text">Siguiente <i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pregunta 3: Hobbies -->
+            <div class="pregunta" id="pregunta-3">
+                <p class="pregunta-titulo"><i class="fas fa-gamepad"></i> ¿Qué te late hacer en tu tiempo libre?</p>
+                <p class="pregunta-sub">Selecciona todos los que apliquen</p>
+                <div class="opciones-grid multi">
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Videojuegos">
+                        <div class="opcion-visual">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Videojuegos</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Deportes">
+                        <div class="opcion-visual">
+                            <i class="fas fa-futbol"></i>
+                            <span>Deportes</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Música">
+                        <div class="opcion-visual">
+                            <i class="fas fa-music"></i>
+                            <span>Música</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Series/Películas">
+                        <div class="opcion-visual">
+                            <i class="fas fa-film"></i>
+                            <span>Series / Pelis</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Leer">
+                        <div class="opcion-visual">
+                            <i class="fas fa-book"></i>
+                            <span>Leer</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Fiestas">
+                        <div class="opcion-visual">
+                            <i class="fas fa-cocktail"></i>
+                            <span>Fiestas</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Cocinar">
+                        <div class="opcion-visual">
+                            <i class="fas fa-utensils"></i>
+                            <span>Cocinar</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Viajar">
+                        <div class="opcion-visual">
+                            <i class="fas fa-plane"></i>
+                            <span>Viajar</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Gym/Fitness">
+                        <div class="opcion-visual">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Gym / Fitness</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Anime/Manga">
+                        <div class="opcion-visual">
+                            <i class="fas fa-dragon"></i>
+                            <span>Anime / Manga</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Fotografía">
+                        <div class="opcion-visual">
+                            <i class="fas fa-camera"></i>
+                            <span>Fotografía</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Arte/Dibujo">
+                        <div class="opcion-visual">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Arte / Dibujo</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Programar">
+                        <div class="opcion-visual">
+                            <i class="fas fa-code"></i>
+                            <span>Programar</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Bailar">
+                        <div class="opcion-visual">
+                            <i class="fas fa-compact-disc"></i>
+                            <span>Bailar</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Mascotas">
+                        <div class="opcion-visual">
+                            <i class="fas fa-paw"></i>
+                            <span>Mascotas</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Memes/Redes">
+                        <div class="opcion-visual">
+                            <i class="fas fa-hashtag"></i>
+                            <span>Memes / Redes</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Ciclismo / Skate">
+                        <div class="opcion-visual">
+                            <i class="fas fa-biking"></i>
+                            <span>Ciclismo / Skate</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Voluntariado">
+                        <div class="opcion-visual">
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Voluntariado</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Idiomas">
+                        <div class="opcion-visual">
+                            <i class="fas fa-language"></i>
+                            <span>Idiomas</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Moda / Maquillaje">
+                        <div class="opcion-visual">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Moda / Maquillaje</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Juegos de Mesa / Rol">
+                        <div class="opcion-visual">
+                            <i class="fas fa-dice-d20"></i>
+                            <span>Juegos de Mesa</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Instrumentos / Canto">
+                        <div class="opcion-visual">
+                            <i class="fas fa-guitar"></i>
+                            <span>Instrumentos</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Jardinería / Plantas">
+                        <div class="opcion-visual">
+                            <i class="fas fa-leaf"></i>
+                            <span>Jardinería</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Yoga / Meditación">
+                        <div class="opcion-visual">
+                            <i class="fas fa-yin-yang"></i>
+                            <span>Yoga / Meditación</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="hobbies" value="Conciertos / Festivales">
+                        <div class="opcion-visual">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>Conciertos</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-botones">
+                    <button type="button" class="cyber-btn nav-btn btn-back" onclick="anteriorPregunta(2)">
+                        <span class="btn-text"><i class="fas fa-arrow-left"></i> Atrás</span>
+                    </button>
+                    <button type="button" class="cyber-btn nav-btn" onclick="siguientePregunta(4)">
+                        <span class="btn-text">Siguiente <i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pregunta 4: Personalidad -->
+            <div class="pregunta" id="pregunta-4">
+                <p class="pregunta-titulo"><i class="fas fa-brain"></i> ¿Cómo te describes?</p>
+                <p class="pregunta-sub">Selecciona todos los que te representen</p>
+                <div class="opciones-grid multi">
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Extrovertido y fiestero">
+                        <div class="opcion-visual">
+                            <i class="fas fa-laugh-beam"></i>
+                            <span>Extrovertido y fiestero</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Tranquilo y relajado">
+                        <div class="opcion-visual">
+                            <i class="fas fa-couch"></i>
+                            <span>Tranquilo y relajado</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Nerd y estudioso">
+                        <div class="opcion-visual">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Nerd y estudioso</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Aventurero y espontáneo">
+                        <div class="opcion-visual">
+                            <i class="fas fa-hiking"></i>
+                            <span>Aventurero</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Romántico y detallista">
+                        <div class="opcion-visual">
+                            <i class="fas fa-heart"></i>
+                            <span>Romántico</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Gracioso y payaso">
+                        <div class="opcion-visual">
+                            <i class="fas fa-theater-masks"></i>
+                            <span>Gracioso / Payaso</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Introvertido y tímido">
+                        <div class="opcion-visual">
+                            <i class="fas fa-moon"></i>
+                            <span>Introvertido</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Líder y ambicioso">
+                        <div class="opcion-visual">
+                            <i class="fas fa-crown"></i>
+                            <span>Líder / Ambicioso</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Creativo y artístico">
+                        <div class="opcion-visual">
+                            <i class="fas fa-palette"></i>
+                            <span>Creativo / Artístico</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Deportista y activo">
+                        <div class="opcion-visual">
+                            <i class="fas fa-running"></i>
+                            <span>Deportista / Activo</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Analítico y lógico">
+                        <div class="opcion-visual">
+                            <i class="fas fa-cogs"></i>
+                            <span>Analítico / Lógico</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Empático y sensible">
+                        <div class="opcion-visual">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <span>Empático / Sensible</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Directo y honesto">
+                        <div class="opcion-visual">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Directo / Honesto</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Misterioso">
+                        <div class="opcion-visual">
+                            <i class="fas fa-mask"></i>
+                            <span>Misterioso</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Espiritual y místico">
+                        <div class="opcion-visual">
+                            <i class="fas fa-om"></i>
+                            <span>Espiritual / Místico</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Soñador y poeta">
+                        <div class="opcion-visual">
+                            <i class="fas fa-cloud"></i>
+                            <span>Soñador / Poeta</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Protector y leal">
+                        <div class="opcion-visual">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Protector / Leal</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Rebelde y libre">
+                        <div class="opcion-visual">
+                            <i class="fas fa-fire"></i>
+                            <span>Rebelde / Libre</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Tradicional y familiar">
+                        <div class="opcion-visual">
+                            <i class="fas fa-home"></i>
+                            <span>Tradicional / Familiar</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Optimista empedernido">
+                        <div class="opcion-visual">
+                            <i class="fas fa-sun"></i>
+                            <span>Optimista</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="personalidad" value="Realista y práctico">
+                        <div class="opcion-visual">
+                            <i class="fas fa-check-square"></i>
+                            <span>Realista / Práctico</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-botones">
+                    <button type="button" class="cyber-btn nav-btn btn-back" onclick="anteriorPregunta(3)">
+                        <span class="btn-text"><i class="fas fa-arrow-left"></i> Atrás</span>
+                    </button>
+                    <button type="button" class="cyber-btn nav-btn" onclick="siguientePregunta(5)">
+                        <span class="btn-text">Siguiente <i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pregunta 5: Música -->
+            <div class="pregunta" id="pregunta-5">
+                <p class="pregunta-titulo"><i class="fas fa-headphones-alt"></i> ¿Qué rolitas traes en los audífonos?</p>
+                <p class="pregunta-sub">Selecciona los géneros que más escuchas</p>
+                <div class="opciones-grid multi">
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Reggaeton / Perreo">
+                        <div class="opcion-visual">
+                            <i class="fas fa-fire"></i>
+                            <span>Reggaeton / Perreo</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Corridos Tumbados">
+                        <div class="opcion-visual">
+                            <i class="fas fa-guitar"></i>
+                            <span>Corridos Tumbados</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Pop / Indie">
+                        <div class="opcion-visual">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Pop / Indie</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Rock / Alternativo">
+                        <div class="opcion-visual">
+                            <i class="fas fa-hand-rock"></i>
+                            <span>Rock / Alternativo</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Electrónica / Techno">
+                        <div class="opcion-visual">
+                            <i class="fas fa-compact-disc"></i>
+                            <span>Electrónica / Techno</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Hip Hop / Rap">
+                        <div class="opcion-visual">
+                            <i class="fas fa-record-vinyl"></i>
+                            <span>Hip Hop / Rap</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Banda / Norteñas">
+                        <div class="opcion-visual">
+                            <i class="fas fa-hat-cowboy"></i>
+                            <span>Banda / Norteñas</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="K-Pop">
+                        <div class="opcion-visual">
+                            <i class="fas fa-heart"></i>
+                            <span>K-Pop</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="Cumbia / Salsa">
+                        <div class="opcion-visual">
+                            <i class="fas fa-music"></i>
+                            <span>Cumbia / Salsa</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="musica" value="De todo un poco">
+                        <div class="opcion-visual">
+                            <i class="fas fa-random"></i>
+                            <span>De todo un poco</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-botones">
+                    <button type="button" class="cyber-btn nav-btn btn-back" onclick="anteriorPregunta(4)">
+                        <span class="btn-text"><i class="fas fa-arrow-left"></i> Atrás</span>
+                    </button>
+                    <button type="button" class="cyber-btn nav-btn" onclick="siguientePregunta(6)">
+                        <span class="btn-text">Siguiente <i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pregunta 6: Vibe de Fin de Semana -->
+            <div class="pregunta" id="pregunta-6">
+                <p class="pregunta-titulo"><i class="fas fa-glass-cheers"></i> ¿Cuál es tu vibe en fin de semana?</p>
+                <div class="opciones-grid">
+                    <label class="opcion-card">
+                        <input type="radio" name="vibe" value="Netflix y chill" required>
+                        <div class="opcion-visual">
+                            <i class="fas fa-tv"></i>
+                            <span>Netflix y chill en pijama</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="vibe" value="Antro hasta el amanecer">
+                        <div class="opcion-visual">
+                            <i class="fas fa-cocktail"></i>
+                            <span>De antro hasta el amanecer</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="vibe" value="Drinks tranqui con compas">
+                        <div class="opcion-visual">
+                            <i class="fas fa-beer"></i>
+                            <span>Drinks tranqui con compas</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="vibe" value="Escapada a la naturaleza">
+                        <div class="opcion-visual">
+                            <i class="fas fa-tree"></i>
+                            <span>Escapada a la naturaleza / Pueblear</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="vibe" value="Gamer toda la noche">
+                        <div class="opcion-visual">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Gamer toda la noche</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="radio" name="vibe" value="Productivo / Gym / Limpiar">
+                        <div class="opcion-visual">
+                            <i class="fas fa-broom"></i>
+                            <span>Productivo / Gym / Limpiar</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-botones">
+                    <button type="button" class="cyber-btn nav-btn btn-back" onclick="anteriorPregunta(5)">
+                        <span class="btn-text"><i class="fas fa-arrow-left"></i> Atrás</span>
+                    </button>
+                    <button type="button" class="cyber-btn nav-btn" onclick="siguientePregunta(7)">
+                        <span class="btn-text">Siguiente <i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pregunta 7: Datos Random / Icebreakers -->
+            <div class="pregunta" id="pregunta-7">
+                <p class="pregunta-titulo"><i class="fas fa-bolt"></i> Datos random para romper el hielo</p>
+                <p class="pregunta-sub">Selecciona todo lo que aplique (¡esto le encanta a la IA!)</p>
+                <div class="opciones-grid multi">
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Manejo moto">
+                        <div class="opcion-visual">
+                            <i class="fas fa-motorcycle"></i>
+                            <span>Manejo moto 🏍️</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Tengo carro">
+                        <div class="opcion-visual">
+                            <i class="fas fa-car"></i>
+                            <span>Tengo carro 🚗</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Tengo tatuajes/piercings">
+                        <div class="opcion-visual">
+                            <i class="fas fa-syringe"></i>
+                            <span>Tengo tatuajes / piercings 💉</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Cocino riquísimo">
+                        <div class="opcion-visual">
+                            <i class="fas fa-pizza-slice"></i>
+                            <span>Cocino riquísimo 👨‍🍳</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Soy foráneo">
+                        <div class="opcion-visual">
+                            <i class="fas fa-suitcase"></i>
+                            <span>Soy foráneo 🎒</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Hablo otro idioma">
+                        <div class="opcion-visual">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Hablo otro idioma 🗣️</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Toco un instrumento">
+                        <div class="opcion-visual">
+                            <i class="fas fa-drum"></i>
+                            <span>Toco un instrumento 🎸</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Amante del café">
+                        <div class="opcion-visual">
+                            <i class="fas fa-mug-hot"></i>
+                            <span>Amante del café ☕</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Team Perros">
+                        <div class="opcion-visual">
+                            <i class="fas fa-dog"></i>
+                            <span>Team Perros 🐶</span>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="random" value="Team Gatos">
+                        <div class="opcion-visual">
+                            <i class="fas fa-cat"></i>
+                            <span>Team Gatos 🐱</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="nav-botones">
+                    <button type="button" class="cyber-btn nav-btn btn-back" onclick="anteriorPregunta(6)">
+                        <span class="btn-text"><i class="fas fa-arrow-left"></i> Atrás</span>
+                    </button>
+                    <button type="button" class="cyber-btn nav-btn" onclick="siguientePregunta(8)">
+                        <span class="btn-text">Siguiente <i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pregunta 8: Descripción libre -->
+            <div class="pregunta" id="pregunta-8">
+                <p class="pregunta-titulo"><i class="fas fa-pen-fancy"></i> Descríbete en tus propias palabras</p>
+                <p class="pregunta-sub">Esto lo usará la IA para encontrarte un match perfecto</p>
+                <div class="cyber-input textarea-wrapper" style="--delay: 0s; opacity: 1; animation: none;">
+                    <textarea id="descripcion_libre" rows="5" required placeholder=" " maxlength="500"></textarea>
+                    <label class="active"><i class="fas fa-magic"></i> Tu vibra en palabras...</label>
+                    <div class="border-anim"></div>
+                </div>
+                <p class="char-count"><span id="char-count">0</span> / 500</p>
+
+                <div class="nav-botones">
+                    <button type="button" class="cyber-btn nav-btn btn-back" onclick="anteriorPregunta(7)">
+                        <span class="btn-text"><i class="fas fa-arrow-left"></i> Atrás</span>
+                    </button>
+                    <button type="submit" class="cyber-btn nav-btn btn-final">
+                        <span class="btn-text">Enviar y Hacer Match <i class="fas fa-heart"></i></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="cuestionario.js"></script>
+</body>
+
+</html>
